@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Razzle | Index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+        
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-signin text-center">       
+                            <label for="phonenum"><h4>Phone Number (1-xxx-xxx-xxxx)</h4></label><br/>
+                            <input class="form-input" id="phonenum" type="tel" pattern="^\d{1}\d{3}\d{3}\d{4}$" required >
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-md btn-primary btn-block" value="Login">
+                            </div>    
+                        </form>
+                    </div>           
+                </div>     
+            </div>
+        </div>  
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+    <img class="mod" src="img/ticket.png"> 
+
+        <!-- Page Features -->
+    <div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Item One</h3>
+                        <div id=""><p>Tickets left:</p></div>
+                        <p>
+                            <a data-toggle="modal" data-target="#myModal" class="btn btn-primary text-center">Buy Ticket</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="item">
+                <div class="jumbotron">
+        <div class="row text-center">
+        
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Item One</h3>
+                        <div id=""><p>Tickets left:</p></div>
+                        <p>
+                            <a data-toggle="modal" data-target="#myModal" class="btn btn-primary text-center">Buy Ticket</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Item Two</h3>
+                        <p>Tickets left: 000</p>
+                        <p>
+                            <a href="#" class="btn btn-default text-center">Buy Ticket</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Item Three</h3>
+                        <p>Tickets left: 000</p>
+                        <p>
+                            <a href="#" class="btn btn-default text-center">Buy Ticket</a> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Item Four</h3>
+                        <p>Tickets left: 000</p>
+                        <p>
+                            <a href="#" class="btn btn-default text-center">Buy Ticket</a> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        </div>
+        <!-- /.row -->
+    </div>
+      </div>
+
+      <!-- Left and right controls -->
+    <a class="carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
+
+
+  </div>
+</div>
+      
+    </div>
+
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="text-center" class="col-lg-12">
+                    <p>Copyright &copy; Razzle 2017</p>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>
