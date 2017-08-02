@@ -18,7 +18,7 @@ body {
     width: 35px;
 }
 
-.hero-feature {
+.hero {
     margin-bottom: 20px;
 }
 
@@ -26,7 +26,7 @@ body {
 	width: 240px;
     height: 170px;
 }
- 
+
 
 .right {
 	background-image: none !important;
