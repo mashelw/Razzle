@@ -39,7 +39,10 @@ module.exports = function(sequelize,DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-    } 
+      },
+      winner: {
+        type: DataTypes.INTEGER,
+      },
   },{timestamps: false}) 
 
   raffles.associate = function(models){

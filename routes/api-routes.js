@@ -74,9 +74,13 @@ module.exports = function(app){
 
 						console.log(responseThree.user.phone)
 
-						db.raffles.update({won:true},{where:{id:response.id}}).then(function(responseFour){
+						db.raffles.update({won:true , winner:responseThree.user.phone},{where:{id:response.id}}).then(function(responseFour){
 							//TEXT THAT SHIT
-
+							client.messages.create({
+						  	body: "OMG YOU WOOOOOON A "+response.item,
+						    to: responseThree.user.phone,  
+						    from: '+14159420315' 
+							})
 						})
 					})
 				})
