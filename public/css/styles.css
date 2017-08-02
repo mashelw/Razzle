@@ -1,0 +1,31 @@
+.hero-feature {
+    margin-bottom: 20px;
+}
+
+.mod {
+	width: 240px;
+    height: 170px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	color: #666;
+}
+
+.jumbotron {
+	margin-top: 25px;
+}
+
+
+.carousel-control {	
+    width: 35px;
+} 
+
+.right {
+	background-image: none !important;
+}
