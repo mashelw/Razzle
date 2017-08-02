@@ -93,6 +93,7 @@ module.exports = function(app){
 					res.response("YAY YOU BOUGHT TICKET NUMBER "+responseTwo.number+"THANKS WE SHOULD DISPLAY THIS SOMEWHERE BECAUSE A REDIRECT WILL MAKE THEM LOG IN AGAIN")
 				})
 
+				db.raffles.update({purchasedTickets: response.purchasedTickets++},{where:{id:response.id}}).then(function(){})
 			}
 
 			else{
