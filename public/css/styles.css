@@ -1,11 +1,3 @@
-.hero-feature {
-    margin-bottom: 20px;
-}
-
-.mod {
-	width: 240px;
-    height: 170px;
-}
 
 footer {
     margin: 50px 0;
@@ -24,7 +16,17 @@ body {
 
 .carousel-control {	
     width: 35px;
-} 
+}
+
+.hero-feature {
+    margin-bottom: 20px;
+}
+
+.mod {
+	width: 240px;
+    height: 170px;
+}
+ 
 
 .right {
 	background-image: none !important;
