@@ -13,30 +13,52 @@
 </head>
 
 <body>
-
     <div class="container">
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-sm">
-        
+        <!-- Modal Number Login -->
+        <div class="modal fade" id="myModal" tabindex="-1" data-focus-on="input:first" style="display: none;">>
+            <div class="modal-dialog modal-sm">        
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Login</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Enter Your Phone Number</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-signin text-center">       
-                            <label for="phonenum"><h4>Phone Number (1-xxx-xxx-xxxx)</h4></label><br/>
-                            <input class="form-input" id="phonenum" type="tel" pattern="^\d{1}\d{3}\d{3}\d{4}$" required >
+                            <label for="phonenum"><h4>EXAMPLE: 14150001234</h4></label>
+                            <input class="form-input" id="phonenum" type="tel" pattern="^\d{11}$" required >
                             <div class="modal-footer">
-                                <input type="submit" class="btn btn-md btn-primary btn-block" value="Login">
+                                <input data-toggle="modal" href="#myModalVerify" class="btn btn-md btn-primary btn-block" value="Login">
                             </div>    
                         </form>
                     </div>           
                 </div>     
             </div>
         </div>  
+        <!-- Modal Verification -->
+        <div class="modal fade" id="myModalVerify" tabindex="-1" data-focus-on="input:first" style="display: none;">>
+            <div class="modal-dialog modal-sm">
+        
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Enter Your Six Digit Password</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-signin text-center">       
+                            <label for="phonenum"><h4>EXAMPLE: 888666</h4></label>
+                            <input class="form-input" id="verifyNumber" type="password" pattern="^\d{6}$" required >
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-md btn-primary btn-block" value="Verify">
+                            </div>    
+                        </form>
+                    </div>           
+                </div>     
+            </div>
+        </div> 
+        
+
     </div>
 
     <!-- Page Content -->
@@ -66,11 +88,11 @@
                     <div class="item">
                         <div class="jumbotron">
                             <div class="row text-center">                
-                                <div class="col-md-3 col-sm-6 hero">
+                                <div class="col-md-4 col-sm-6 hero">
                                     <div class="thumbnail">
-                                        <img src="http://placehold.it/800x500" alt="">
+                                        <img src="img/iphone7.png" alt="iPhone 7">
                                         <div class="caption">
-                                            <h3>Item One</h3>
+                                            <h3>iPhone 7</h3>
                                             <div id=""><p>Tickets left:</p></div>
                                             <p>
                                                 <a data-toggle="modal" data-target="#myModal" class="btn btn-primary text-center">Buy Ticket</a>
@@ -79,11 +101,11 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6 hero">
+                                <div class="col-md-4 col-sm-6 hero">
                                     <div class="thumbnail">
-                                        <img src="http://placehold.it/800x500" alt="">
+                                        <img src="img/bose.jpg"  alt="Bose Headphones">
                                         <div class="caption">
-                                            <h3>Item Two</h3>
+                                            <h3>Bose Headphones</h3>
                                             <p>Tickets left: 000</p>
                                             <p>
                                                 <a data-toggle="modal" data-target="#myModal" class="btn btn-primary text-center">Buy Ticket</a>
@@ -92,24 +114,11 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6 hero">
-                                    <div class="thumbnail">
-                                        <img src="http://placehold.it/800x500" alt="">
+                                <div class="col-md-4 col-sm-6 hero">
+                                    <div class="thumbnail" >
+                                        <img src="img/ps4.png"  alt="Playstation 4">
                                         <div class="caption">
-                                            <h3>Item Three</h3>
-                                            <p>Tickets left: 000</p>
-                                            <p>
-                                                <a data-toggle="modal" data-target="#myModal" class="btn btn-primary text-center">Buy Ticket</a> 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 hero">
-                                    <div class="thumbnail">
-                                        <img src="http://placehold.it/800x500" alt="">
-                                        <div class="caption">
-                                            <h3>Item Four</h3>
+                                            <h3>Playstation 4</h3>
                                             <p>Tickets left: 000</p>
                                             <p>
                                                 <a data-toggle="modal" data-target="#myModal" class="btn btn-primary text-center">Buy Ticket</a> 
@@ -133,10 +142,8 @@
                     </a>
             </div>
         </div>
-    </div>
-       
+    </div>      
     <hr>
-
     <!-- Footer -->
     <footer>
         <div class="row">

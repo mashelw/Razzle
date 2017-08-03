@@ -14,7 +14,7 @@ body {
 	margin-top: 25px;
 }
 
-.carousel-inner > .item > img {
+.carousel-inner > .item >  img {
     margin: 0 auto;
 }
 
@@ -24,17 +24,17 @@ body {
 .carousel-inner{
   width:100%;
   height: 500px;
+  border-radius: 10px;  
   max-height: 500px !important;
 }
 
-.carousel-control {	
+.carousel-control {
     width: 35px;
 }
 
 .hero {
     margin-bottom: 20px;
 }
-
 
 .right {
 	background-image: none !important;
@@ -46,3 +46,11 @@ body {
     background: #fff;
     background: rgba(255,255,255,0.9);
 }
+
+.carousel-inner > .item > .jumbotron > .row > .col-md-4 > .thumbnail > img {
+  max-width: 200px;
+  width: 200px;
+  max-height: 200px;
+  height: 200px;
+}
+
