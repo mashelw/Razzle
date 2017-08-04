@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Razzle | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+    {{{body}}}
+ 
+    <footer>
+        <div class="row">
+            <div class="text-center" class="col-lg-12">
+                <h5>Copyright &copy; Razzle 2017</h5>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+var tastyData = {}
+    $("#myModal").on("submit" , function(event){
+        event.preventDefault()
+        tastyData = {
+            'phone': $("#phone").val(),
+            'twoFactor': 000000
+        }
+        $.post("/api/login", tastyData, function(data){
+            console.log(data)
+        })
+     
+    })
+
+    $("#myModalVerify").on("submit" , function(event){
+
+        
+        tastyData.twoFactor = $("#twoFactor").val()
+        console.log(tastyData.twoFactor)
+        $.post("/home", tastyData, function(data){
+            console.log("Data: " + data)
+    })
+    })
+
+    $("#purchase").on("click" , function(event){
+        var raffle = {
+            item: $("#purchase").val()
+        }
+  
+        // raffle = JSON.stringify(raffle[0])
+        console.log(raffle)
+        $.post("/api/purchase", raffle, function(data){
+            console.log("Data: " + data)
+        })
+    })
+</script>
+</html>

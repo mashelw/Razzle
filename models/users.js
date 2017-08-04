@@ -2,11 +2,11 @@ module.exports = function(sequelize,DataTypes) {
 
     var users = sequelize.define("users" , {
       phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
       },
-      twofactor: {
-      type: DataTypes.INTEGER,
+      twoFactor: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     authenticated: {

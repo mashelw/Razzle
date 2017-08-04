@@ -24,7 +24,7 @@ module.exports = function(sequelize,DataTypes) {
       purchasedTickets: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
       },
       ticketPrice:{
       type: DataTypes.INTEGER,
