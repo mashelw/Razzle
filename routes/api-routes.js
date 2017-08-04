@@ -1,60 +1,94 @@
 var db = require("../models")
-var twilio = require('twilio')
-var accountSid = 'ACe1fbff8235e3d85a3db46e3f89e5b65d'; // Your Account SID from www.twilio.com/console
-var authToken = 'f3d72f6b88ef9990567a65d4701f4d4d';   // Your Auth Token from www.twilio.com/console
-var client = new twilio(accountSid, authToken);
+
+var accountSid = 'AC2c5124ada28f545c9008ad89b2118b30'; // Your Account SID from www.twilio.com/console
+var authToken = 'd65df0edddce2b74a66255a096a2e7ed';   // Your Auth Token from www.twilio.com/console
+var client = require('twilio')(accountSid, authToken);
 
 module.exports = function(app){
 
 	app.get("/",function(req,res){
-
 		db.raffles.findAll().then(function(response){
-
-			res.json(response)
+			console.log("THISHITRIGHTHERE")
+			res.render("splash", {items: response})
 		})
 	})
 
 	app.post("/api/login",function(req,res){
+		
+		console.log(req.body.phone)
 
-		db.users.update( {twoFactor:(Math.floor(Math.random() * 900000) + 100000)} , {where: {phone: req.body.phone}} ).then(function(){
+		var tired= JSON.stringify(Math.floor(Math.random() * 900000) + 100000)
+	
 
-			db.users.findOne({where: {phone:req.body.phone}}).then(function(response){
+		db.users.upsert({phone: req.body.phone , twoFactor: tired} , {where: {phone: req.body.phone}}).then(function(response){
+			console.log("response:"+ JSON.stringify(response))
+			
 
+			db.users.findAll({where: {phone:req.body.phone}}).then(function(responseTwo){
+				console.log("response two:"+ JSON.stringify(responseTwo))
+				console.log(responseTwo[0].twoFactor)
+				console.log(responseTwo[0].phone)
 				client.messages.create({
-				  	body: response.twoFactor,
-				    to: response.phone,  
-				    from: '+14159420315' 
+				  	body: responseTwo[0].twoFactor,
+				    to: "+"+responseTwo[0].phone,  
+				    from: '+14152125439' 
 				})
+
 			}) 
 		})
 	})
 
-	app.get("/home",function(req,res){
+
+	app.post("/home",function(req,res){
+
+		console.log("MNERGGGGGG")
 		
 		db.users.findOne({where:{phone:req.body.phone}}).then(function(response){
+			
 
-			if(response.twoFactor === req.body.twoFactor){	
+			if(req.body.twoFactor===response.twoFactor){
+				console.log("INITTOWINIT")
 
-				db.tickets.findAll({include:[db.users]},{where: {phone:req.body.phone}}).then(function(responseTwo){
+			
 
-					res.json(response)
-				})
+					res.redirect("/home/")
+					
+				
+
+				// db.tickets.findAll({include:[db.users]},{where: {phone:req.body.phone}}).then(function(responseTwo){
+					
+				// 	res.json(response)
+				// })
 			}
-			else{
+			// else{
 
-				res.return("LOLWRONGPASSWORD")
+			// 	res.return("LOLWRONGPASSWORD")
 
-				db.users.update({twoFactor:((Math.floor(Math.random() * 900000) + 100000))},{where: {phone: req.body.phone}}).then(function(responseThree){
+			// 	db.users.update({twoFactor:((Math.floor(Math.random() * 900000) + 100000))},{where: {phone: req.body.phone}}).then(function(responseThree){
 
-					res.redirect("/")
-				})
-			}
+			// 		res.redirect("/")
+			// 	})
+			// }
+		})
+	})
+
+
+	app.get("/home/",function(req,res){
+		console.log(req.params.id)
+		db.raffles.findAll().then(function(response){
+			console.log("INSIDENAOW")
+			res.render("home", {items: response})
 		})
 	})
 
 	app.post("/api/purchase",function(req,res){
+		console.log("ERMERGHERD")
 
-		db.raffles.findOne({where:{id:req.body.id}}).then(function(response){
+		console.log(req.body.item)
+
+		db.raffles.findOne({where:{item:req.body.item}}).then(function(response){
+
+			console.log(response)
 
 			if((response.totalTickets=(response.purchasedTickets+1))&&(!response.won)){
 
